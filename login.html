@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="login.css">
+    <title>Área de Login</title>
+</head>
+<body>
+    <video class="video-fundo" autoplay muted loop playsinline aria-hidden="true">
+        <source src="night-city-daily-life-cyberpunk-2077-moewalls-com (1).mp4" type="video/mp4">
+    </video>
+    <div class="camada-video"></div>
+
+    <main>
+        <section class="card-login">
+
+            <a href="folder.html" class="voltar"><i class="fa-solid fa-arrow-left"></i> Voltar ao portfólio</a>
+
+            <div class="logo">
+                <span class="simbolo-logo">&lt;</span> dev.portfólio <span class="simbolo-logo">/&gt;</span>
+            </div>
+
+            <div class="titulo-login">
+                <h1>Acessar conta</h1>
+                <p>Entre para continuar sua jornada.</p>
+            </div>
+
+            <form action="#" method="post">
+
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <div class="entrada">
+                        <i class="fa-regular fa-envelope"></i>
+                        <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" required autocomplete="email">
+                    </div>
+                </div>
+
+                <div class="campo">
+                    <label for="senha">Senha</label>
+                    <div class="entrada">
+                        <i class="fa-solid fa-lock"></i>
+                        <input type="password" id="senha" name="senha" placeholder="••••••••" required minlength="6" autocomplete="current-password">
+                        <button type="button" class="ver-senha" id="ver-senha" aria-label="Mostrar senha">
+                            <i class="fa-regular fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="opcoes">
+                    <label class="lembrar">
+                        <input type="checkbox" name="lembrar"> Lembrar de mim
+                    </label>
+                    <a href="#">Esqueci a senha</a>
+                </div>
+
+                <button type="submit" class="btn-entrar">
+                    <i class="fa-solid fa-right-to-bracket"></i> Entrar
+                </button>
+
+            </form>
+
+            <p class="cadastro">Ainda não tem conta? <a href="#">Criar conta</a></p>
+        </section>
+    </main>
+
+    <script>
+        // Mostrar / ocultar senha
+        const campoSenha = document.getElementById('senha');
+        const botaoVer = document.getElementById('ver-senha');
+
+        botaoVer.addEventListener('click', () => {
+            const escondida = campoSenha.type === 'password';
+            campoSenha.type = escondida ? 'text' : 'password';
+            botaoVer.innerHTML = escondida
+                ? '<i class="fa-regular fa-eye-slash"></i>'
+                : '<i class="fa-regular fa-eye"></i>';
+            botaoVer.setAttribute('aria-label', escondida ? 'Ocultar senha' : 'Mostrar senha');
+        });
+    </script>
+</body>
+</html>
